@@ -1,0 +1,39 @@
+/*
+Box Model
+*/
+
+.conteudo{
+    border: 1px solid red;
+    /*padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;*/
+    
+    /* padding: 20px 15px 10px 5px;  Cima, direita, baixo, esquerda. */
+    /* padding: 20px; Todos os lados */
+    padding: 20px 5px; /*Superior Inferior / Direita  Esquerda.*/
+
+    /*margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;*/
+    margin: 10px;
+    width: 150px;
+}
+
+.conteudo2{
+    margin: 50px; /*Quando duas caixas colidem e tem margens diferentes, apenas a maior margem prevalecerá.*/
+    width: 150px;
+    border: 1px solid red;
+}
+
+#noticia{
+    background: #f9f9f9;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+h2{
+    
+    margin: 0px; /*H2 tem uma margem padrão*/
+}

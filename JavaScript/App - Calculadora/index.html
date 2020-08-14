@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <title>Calculadora</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background: #D9D9D9">
+
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <br />
+
+        <div class="calculadora">
+          <input type="text" id="resultado" class="form-control resultado" placeholder="0" maxlength="11"
+            disabled="disabled" />
+
+          <div class="row">
+            <button onclick="operacao('c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
+            <button onclick="operacao('/')" type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
+            <button onclick="operacao('*')" type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+          </div>
+
+          <div class="row">
+            <button onclick="adicionar('7')" type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
+            <button onclick="adicionar('8')" type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
+            <button onclick="adicionar('9')" type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
+            <button onclick="operacao('-')" type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
+          </div>
+
+          <div class="row">
+            <button onclick="adicionar('4')" type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
+            <button onclick="adicionar('5')" type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
+            <button onclick="adicionar('6')" type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
+            <button onclick="operacao('+')" type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+          </div>
+
+          <div class="row">
+            <button onclick="adicionar('1')" type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
+            <button onclick="adicionar('2')" type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
+            <button onclick="adicionar('3')" type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
+            <button onclick="calcular()" type="button" class="btn btn-dark btn-lg enter">=</button>
+          </div>
+
+          <div class="row" style="margin-top: -60px">
+            <button onclick="adicionar('0')" type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
+            <button onclick="adicionar('.')" type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+
+  //var numbers = new Array();
+  var number = "";
+  var check = false
+
+  function calcular() {
+    number += document.getElementById('resultado').value;
+    document.getElementById('resultado').value = eval(number);
+    number = document.getElementById('resultado').value;
+    check = true;
+  }
+
+  function operacao(op) {
+    if (op === 'c') {
+      document.getElementById('resultado').value = ""
+      number = "";
+    } else if (check == true) {
+      number += op;
+      document.getElementById('resultado').value = "";
+      check = false;
+    } else {
+      document.getElementById('resultado').value += op;
+      number += document.getElementById('resultado').value;
+      document.getElementById('resultado').value = "";
+    }
+  }
+
+  function adicionar(valor) {
+    document.getElementById('resultado').value += valor;
+  }
+</script>
+
+</html>

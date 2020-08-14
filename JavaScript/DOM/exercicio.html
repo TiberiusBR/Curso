@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script>
+        var str = ""
+
+        function yellowBg(){
+            document.getElementById('teste').style.backgroundColor = "#FFFF00";
+        }
+
+        function blurBg(){
+            str = document.getElementById('teste').value;
+            
+            if (str.length < 3){
+                document.getElementById('teste').style.backgroundColor = "#ff0000"
+            } else {
+                document.getElementById('teste').style.backgroundColor = "#0dff00"
+            }
+
+            str = "";
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input 
+    onfocus = "yellowBg()"
+    onblur="blurBg()" 
+    type="text" 
+    id="teste">
+
+</body>
+
+</html>
